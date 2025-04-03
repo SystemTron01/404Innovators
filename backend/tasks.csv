@@ -1,0 +1,6 @@
+task_id,task_description,priority
+1,"Fix UI bug in the dashboard",High
+2,"Optimize database queries",Medium
+3,"Update documentation for API",Low
+4,"Implement login authentication",High
+5,"Refactor backend code structure",Medium
