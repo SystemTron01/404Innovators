@@ -3,7 +3,7 @@ Problem Statement Title: AI Task Allocation System
 College Name: New Horizon College of Engineering
 
 Team Members:
-1. Tharun Sivakuma - tharunklm@gmail.com - 8088464964
+1. Tharun Sivakumar - tharunklm@gmail.com - 8088464964
 2. Shaik Ameer Sohail - skameer2915@gmail.com - 9663360065
 3. Sanjay Kumar R - rsanjaymail@gmail.com - 9008769230
 4. Tushar S - treddy748@gmail.com - 8217596017
