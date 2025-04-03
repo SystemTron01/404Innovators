@@ -1,259 +1,131 @@
 # 🚀 AI Task Allocation System
 
-This project is an AI-powered **task allocation system** that assigns tasks to users based on their skills and task priorities. The backend is built with **FastAPI**, the frontend with **React**, and AI-based task allocation uses **OpenAI/Gemini API**.
+This project is an AI-powered **task allocation system** that assigns tasks to users based on their skills and task priorities. The backend is built with **FastAPI**, the frontend with **React**, and AI-based task allocation uses **OpenAI**.
 
 ---
 
 ## 📌 Features
 
-✅ Load tasks and users from CSV files  
-✅ AI-powered task assignment using OpenAI/Gemini  
-✅ FastAPI backend with REST API endpoints  
-✅ React frontend with task display and allocation  
-✅ Simple CSV-based database (Excel-compatible)
+- ✅ **AI-Powered Task Assignment:** Utilizes OpenAI to match tasks to the most suitable users based on skills and priorities.
+- ✅ **FastAPI Backend:** Handles task and user data efficiently through REST API endpoints.
+- ✅ **React Frontend:** Provides an intuitive interface to display tasks and user allocations.
+- ✅ **CSV-Based Storage:** Uses simple CSV files to store task and user information, making it lightweight and Excel-compatible.
+- ✅ **Scalability:** Designed to be easily extendable for databases and additional AI models.
+
+This project is an AI-powered **task allocation system** that assigns tasks to users based on their skills and task priorities. The backend is built with **FastAPI**, the frontend with **React**, and AI-based task allocation uses **OpenAI/Gemini API**.
+
 
 ---
 
-## 🛠️ Tech Stack
+## 📌 Solution Approach
 
-- **Backend:** FastAPI (Python)
-- **Frontend:** React, Chakra UI
-- **AI Integration:** OpenAI API / Gemini API
-- **Storage:** CSV (Excel-compatible)
+Efficient task management is crucial for productivity, yet manual task allocation is often inefficient, biased, and time-consuming. Our AI Task Allocation System aims to solve this by introducing **intelligent, automated task assignment** using AI-driven decision-making.
+
+### 📊 AI Task Allocation Flowchart
+
+To better understand the process, refer to the flowchart below:
+
+<img src="assets/flowchart.png" alt="AI Task Allocation Flowchart" width="300">
+
+### **Thought Process Behind the Solution**
+
+1. **Identifying the Problem:**
+
+   - In many organizations, tasks are assigned manually, leading to **inefficiencies, workload imbalances, and human bias**.
+   - A **data-driven, AI-powered** approach can **objectively** match tasks to the best-suited individuals.
+
+2. **Defining Key Requirements:**
+
+   - The system should be **lightweight and easy to integrate**, so we opted for **CSV files** as the initial data source.
+   - It should be **scalable**, allowing future enhancements like **database integration or advanced AI models**.
+
+3. **Designing the Allocation Strategy:**
+
+   - AI models (OpenAI/Gemini) analyze **task descriptions and priority levels** to determine required skills.
+   - The system **cross-references** tasks with user skill sets and past assignments to find the most suitable candidate.
+   - The **allocation algorithm considers workload balancing**, ensuring fair task distribution.
+
+4. **Ensuring Usability & Real-Time Updates:**
+   - A **FastAPI backend** processes tasks and user data efficiently.
+   - A **React frontend** provides a **clear, interactive interface** for viewing task assignments in real-time.
+   - AI-driven decisions are **transparent** and can be manually adjusted if needed.
+
+### **Why This Approach?**
+
+✅ **Eliminates Human Bias** – AI assigns tasks based on skill matching rather than subjective judgment.  
+✅ **Saves Time & Effort** – Automates the tedious process of task allocation.  
+✅ **Optimizes Productivity** – Ensures that the right person gets the right task at the right time.
+
+This approach provides a **scalable, intelligent task management system** that significantly enhances efficiency while being adaptable to future improvements. 🚀
 
 ---
 
-## ⚡ Quick Setup
+## 🛠️ Implementation Details
+
+To build the AI Task Allocation system, we used:
+
+- **Backend:** FastAPI (Python) – for handling API requests and managing task/user data.
+- **Frontend:** React with Chakra UI – for an intuitive user interface.
+- **AI Integration:** OpenAI API / Gemini API – for intelligent task allocation.
+- **Storage:** CSV files – for lightweight, Excel-compatible data storage.
+
+The system is designed for **scalability**, allowing easy integration with databases and advanced AI models.
+
+---
+
+## ⚡ Execution Steps
+
+To run the system, follow these steps:
 
 ### 1️⃣ Clone the Repository
 
-````sh
+```sh
 git clone https://github.com/YOUR_GITHUB_USERNAME/ai-task-allocation.git
 cd ai-task-allocation
-2️⃣ Set Up Backend (FastAPI)
-sh
-Copy
-Edit
+```
+
+### 2️⃣ Set Up Backend (FastAPI)
+
+```sh
 cd backend
 pip install -r requirements.txt
 uvicorn main:app --reload
-The backend runs at http://127.0.0.1:8000
+```
 
-3️⃣ Set Up Frontend (React)
-sh
-Copy
-Edit
+📍 The backend runs at [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+### 3️⃣ Set Up Frontend (React)
+
+```sh
 cd frontend
 npm install
 npm start
-The frontend runs at http://localhost:3000
+```
 
-📂 Project Structure
-bash
-Copy
-Edit
-ai-task-allocation/
-├── backend/              # FastAPI Backend
-│   ├── main.py           # API Entry Point
-│   ├── data_loader.py    # Loads Tasks & Users from CSV
-│   ├── task_allocator.py # AI-based Task Assignment
-│   ├── requirements.txt  # Dependencies
-│   ├── .env              # API Keys (Ignored in Git)
-├── frontend/             # React Frontend
-│   ├── src/
-│   │   ├── components/   # React UI Components
-│   │   ├── pages/        # Main Pages
-│   │   ├── App.js        # Main React File
-│   ├── package.json      # Frontend Dependencies
-├── sample_data/          # Sample CSV Files
-│   ├── tasks.csv
-│   ├── users.csv
-├── README.md             # Project Documentation
-📡 API Endpoints (FastAPI)
-🔹 GET /tasks
-Response:
-
-json
-Copy
-Edit
-[
-  {"task_id": 1, "description": "Fix UI bug", "priority": "High"},
-  {"task_id": 2, "description": "Optimize database", "priority": "Medium"}
-]
-🔹 GET /users
-Response:
-
-json
-Copy
-Edit
-[
-  {"user_id": 101, "name": "John Doe", "skills": ["UI", "JavaScript"]},
-  {"user_id": 102, "name": "Jane Doe", "skills": ["Python", "FastAPI"]}
-]
-🔹 POST /assign
-Request:
-
-json
-Copy
-Edit
-{"task_id": 1}
-Response:
-
-json
-Copy
-Edit
-{"task_id": 1, "assigned_to": "John Doe"}
-📜 Sample CSV Data
-📄 tasks.csv
-
-scss
-Copy
-Edit
-task_id,description,priority
-1,Fix UI bug,High
-2,Optimize database queries,Medium
-📄 users.csv
-
-pgsql
-Copy
-Edit
-user_id,name,skills
-101,John Doe,UI, JavaScript
-102,Jane Doe,Python, FastAPI
-🏗️ Contributors
-👨‍💻 Ameer - Backend Development (FastAPI, CSV Handling)
-🎨 Tharun - Frontend Development (React, Chakra UI)
-🔗 Tushar - API Integration (AI Model, FastAPI)
-📝 Sanjay - Documentation & Testing
-
-📌 Next Steps
- Improve AI task matching logic
-
- Enhance UI with task filtering
-
- Deploy the project (Optional)
-
-## 📌 API Endpoints
-
-### 1️⃣ Get All Tasks
-**Endpoint:** `GET /tasks`
-**Description:** Fetches all tasks from the CSV file.
-**Response Example:**
-```json
-[
-    {"task_id": 1, "task_description": "Fix UI bug", "priority": "High"},
-    {"task_id": 2, "task_description": "Optimize database", "priority": "Medium"}
-]
-2️⃣ Get All Users
-Endpoint: GET /users
-Description: Fetches all users from the CSV file.
-Response Example:
-
-json
-Copy
-Edit
-[
-    {"user_id": 101, "user_name": "John Doe", "skills": "UI, JavaScript"},
-    {"user_id": 102, "user_name": "Jane Doe", "skills": "Python, FastAPI"}
-]
-3️⃣ Assign Tasks Using AI
-Endpoint: POST /assign
-Description: Sends a task description and user list to AI for allocation.
-Request Example:
-
-json
-Copy
-Edit
-{
-    "task_description": "Optimize database queries",
-    "users": [
-        {"user_id": 101, "user_name": "John Doe", "skills": "UI, JavaScript"},
-        {"user_id": 102, "user_name": "Jane Doe", "skills": "Python, FastAPI"}
-    ]
-}
-Response Example:
-
-json
-Copy
-Edit
-{
-    "assigned_user": "Jane Doe"
-}
-````
-
-## 🚀 How to Use the API
-
-### 1️⃣ Start the FastAPI Server
-
-Run the following command in the `backend/` folder:
-
-````sh
-uvicorn main:app --reload
-2️⃣ Available API Endpoints
-Endpoint	Method	Description
-/	GET	Check if API is running
-/tasks	GET	Fetch all tasks from the CSV
-/users	GET	Fetch all users from the CSV
-/assign	POST	Assign a task to the best user using AI
-3️⃣ Testing API with Postman or Curl
-📌 Get All Tasks:
-sh
-Copy
-Edit
-curl -X GET "http://127.0.0.1:8000/tasks"
-📌 Get All Users:
-sh
-Copy
-Edit
-curl -X GET "http://127.0.0.1:8000/users"
-📌 Assign Task Using AI:
-sh
-Copy
-Edit
-curl -X POST "http://127.0.0.1:8000/assign" \
-     -H "Content-Type: application/json" \
-     -d '{"task_description": "Fix UI bug"}'
-yaml
-Copy
-Edit
+📍 The frontend runs at [http://localhost:3000](http://localhost:3000)
 
 ---
 
-### **Step 2: Create a Demo Script**
-📌 **Where to paste?**
-- Inside the `backend/` folder, create a new file **demo_script.md**.
-- **Paste the content below inside `demo_script.md`.**
+## 📦 Dependencies
 
-📌 **What to copy-paste?**
-Copy everything below and paste it inside `demo_script.md`:
+Ensure you have the following installed before running the project:
 
-```md
-# 🎤 AI Task Allocation - Demo Script
+- **Python 3.x** (for FastAPI backend)
+- **Node.js & npm** (for React frontend)
+- **FastAPI & Uvicorn** (backend framework and server)
+- **Chakra UI** (for frontend styling)
+- **OpenAI/Gemini API Key** (for AI task assignment)
+- **CSV files** (for task and user data storage)
 
-## 1️⃣ Introduction
-"Hello everyone, welcome to our demo of the AI Task Allocation system! This project helps automate task assignments using AI, optimizing efficiency."
+---
 
-## 2️⃣ Features Overview
-- **FastAPI Backend** for handling tasks and users.
-- **AI-based Task Assignment** using OpenAI/Gemini.
-- **React Frontend** to display tasks and users.
+## ✅ Expected Output
 
-## 3️⃣ Live Demo
-### 📌 Step 1: Start the Server
-- Run: `uvicorn main:app --reload`
-- Open `http://127.0.0.1:8000` to check if it's running.
+Once the system is up and running, you can expect:
 
-### 📌 Step 2: Fetch Tasks & Users
-- Call `/tasks` to list all tasks.
-- Call `/users` to list available users.
+1. **Task and User Management:** View all tasks and users through API endpoints or the frontend UI.
+2. **AI-Based Task Assignment:** The system will intelligently assign tasks to the most suitable users based on skill matching.
+3. **Seamless Frontend Experience:** Users can view tasks, assignments, and status updates in real-time through the React UI.
+4. **Scalable & Extendable Solution:** The system can be modified to include databases or more advanced AI models if needed.
 
-### 📌 Step 3: Assign a Task using AI
-- Send a **POST request** to `/assign`.
-- The AI suggests the best user for the task.
-
-### 📌 Step 4: Frontend Demo
-- Show task assignment in the React UI.
-
-## 4️⃣ Conclusion
-"This AI-powered system streamlines task management, making it more efficient. Thank you for watching!"
-````
+This AI-powered task allocation system simplifies and optimizes task management, ensuring effective and efficient workflow distribution.
