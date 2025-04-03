@@ -1,7 +1,8 @@
 from sqlalchemy import create_engine, Column, Integer, String, JSON
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import declarative_base
+from sqlalchemy.sql import text
+from sqlalchemy.ext.mutable import MutableList
 
-# Create the declarative base FIRST
 Base = declarative_base()
 
 class User(Base):
@@ -10,7 +11,7 @@ class User(Base):
     name = Column(String)
     skills = Column(String)
     availability = Column(String)
-    current_tasks = Column(JSON, default=[])
+    current_tasks = Column(MutableList.as_mutable(JSON), default=[])  # Corrected
     capacity = Column(Integer)
 
 class Task(Base):
@@ -20,5 +21,5 @@ class Task(Base):
     description = Column(String)
     required_skills = Column(String)
     required_people = Column(Integer)
-    assigned_to = Column(JSON, default=[])
+    assigned_to = Column(MutableList.as_mutable(JSON), default=[])  # Corrected
     status = Column(String)
