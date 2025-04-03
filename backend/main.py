@@ -1,12 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-<<<<<<< HEAD
-from data_loader import router as data_loader_router
-=======
 from pydantic import BaseModel
 from data_loader import router as data_loader_router
 from task_allocator import allocate_task  # Import the AI task allocation function
->>>>>>> 7cb9f15f9b7bd4b67d9231480a2eb3e2e8397291
 
 app = FastAPI()
 
@@ -37,10 +33,6 @@ async def assign_task(request: TaskRequest):
 def home():
     return {"message": "AI Task Allocation API is running!"}
 
-<<<<<<< HEAD
-if __name__ == "__main__":
-=======
 if __name__ == "_main_":
->>>>>>> 7cb9f15f9b7bd4b67d9231480a2eb3e2e8397291
     import uvicorn
     uvicorn.run(app, host="127.0.0.1", port=8000)
