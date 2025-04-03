@@ -1,10 +1,15 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from data_loader import load_tasks, load_users
+from pydantic import BaseModel
+from data_loader import router as data_loader_router
+from task_allocator import allocate_task  # Import the AI task allocation function
 
 app = FastAPI()
 
-# Enable CORS for frontend-backend communication (Change "http://localhost:3000" to your actual frontend URL if needed)
+# Register the data_loader router
+app.include_router(data_loader_router)
+
+# Enable CORS for frontend-backend communication
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000"],  # Change to frontend URL
@@ -13,28 +18,21 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Request model for task and user data
+class TaskRequest(BaseModel):
+    task_desc: str
+    user_skills: str  # A simple string representation for this example
+
+# Task assignment endpoint
+@app.post("/assign")
+async def assign_task(request: TaskRequest):
+    assigned_user = allocate_task(request.task_desc, request.user_skills)
+    return {"assigned_user": assigned_user}
+
 @app.get("/")
 def home():
     return {"message": "AI Task Allocation API is running!"}
 
-@app.get("/tasks")
-def get_tasks():
-    """Fetch all tasks from the CSV."""
-    try:
-        tasks = load_tasks("tasks.csv")
-        return {"tasks": tasks}
-    except Exception as e:
-        return {"error": f"Failed to load tasks: {str(e)}"}
-
-@app.get("/users")
-def get_users():
-    """Fetch all users from the CSV."""
-    try:
-        users = load_users("users.csv")
-        return {"users": users}
-    except Exception as e:
-        return {"error": f"Failed to load users: {str(e)}"}
-
-if __name__ == "__main__":
+if _name_ == "_main_":
     import uvicorn
     uvicorn.run(app, host="127.0.0.1", port=8000)
