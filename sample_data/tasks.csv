@@ -1,0 +1,6 @@
+task_id,description,priority
+1,Fix UI bug,High
+2,Optimize database queries,Medium
+3,Update API documentation,Low
+4,Implement authentication system,High
+5,Improve frontend responsiveness,Medium
