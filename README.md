@@ -25,7 +25,7 @@ Efficient task management is crucial for productivity, yet manual task allocatio
 
 To better understand the process, refer to the flowchart below:
 
-![AI Task Allocation Flowchart](assets/flowchart.png)
+<img src="assets/flowchart.png" alt="AI Task Allocation Flowchart" width="300">
 
 ### **Thought Process Behind the Solution**
 
