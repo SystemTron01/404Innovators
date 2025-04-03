@@ -180,3 +180,80 @@ Edit
     "assigned_user": "Jane Doe"
 }
 ````
+
+## 🚀 How to Use the API
+
+### 1️⃣ Start the FastAPI Server
+
+Run the following command in the `backend/` folder:
+
+````sh
+uvicorn main:app --reload
+2️⃣ Available API Endpoints
+Endpoint	Method	Description
+/	GET	Check if API is running
+/tasks	GET	Fetch all tasks from the CSV
+/users	GET	Fetch all users from the CSV
+/assign	POST	Assign a task to the best user using AI
+3️⃣ Testing API with Postman or Curl
+📌 Get All Tasks:
+sh
+Copy
+Edit
+curl -X GET "http://127.0.0.1:8000/tasks"
+📌 Get All Users:
+sh
+Copy
+Edit
+curl -X GET "http://127.0.0.1:8000/users"
+📌 Assign Task Using AI:
+sh
+Copy
+Edit
+curl -X POST "http://127.0.0.1:8000/assign" \
+     -H "Content-Type: application/json" \
+     -d '{"task_description": "Fix UI bug"}'
+yaml
+Copy
+Edit
+
+---
+
+### **Step 2: Create a Demo Script**
+📌 **Where to paste?**
+- Inside the `backend/` folder, create a new file **demo_script.md**.
+- **Paste the content below inside `demo_script.md`.**
+
+📌 **What to copy-paste?**
+Copy everything below and paste it inside `demo_script.md`:
+
+```md
+# 🎤 AI Task Allocation - Demo Script
+
+## 1️⃣ Introduction
+"Hello everyone, welcome to our demo of the AI Task Allocation system! This project helps automate task assignments using AI, optimizing efficiency."
+
+## 2️⃣ Features Overview
+- **FastAPI Backend** for handling tasks and users.
+- **AI-based Task Assignment** using OpenAI/Gemini.
+- **React Frontend** to display tasks and users.
+
+## 3️⃣ Live Demo
+### 📌 Step 1: Start the Server
+- Run: `uvicorn main:app --reload`
+- Open `http://127.0.0.1:8000` to check if it's running.
+
+### 📌 Step 2: Fetch Tasks & Users
+- Call `/tasks` to list all tasks.
+- Call `/users` to list available users.
+
+### 📌 Step 3: Assign a Task using AI
+- Send a **POST request** to `/assign`.
+- The AI suggests the best user for the task.
+
+### 📌 Step 4: Frontend Demo
+- Show task assignment in the React UI.
+
+## 4️⃣ Conclusion
+"This AI-powered system streamlines task management, making it more efficient. Thank you for watching!"
+````
