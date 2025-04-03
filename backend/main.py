@@ -4,10 +4,10 @@ from data_loader import load_tasks, load_users
 
 app = FastAPI()
 
-# Enable CORS for frontend-backend communication
+# Enable CORS for frontend-backend communication (Change "http://localhost:3000" to your actual frontend URL if needed)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins (change this for production)
+    allow_origins=["http://localhost:3000"],  # Change to frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -20,14 +20,20 @@ def home():
 @app.get("/tasks")
 def get_tasks():
     """Fetch all tasks from the CSV."""
-    tasks = load_tasks("tasks.csv")
-    return {"tasks": tasks}
+    try:
+        tasks = load_tasks("tasks.csv")
+        return {"tasks": tasks}
+    except Exception as e:
+        return {"error": f"Failed to load tasks: {str(e)}"}
 
 @app.get("/users")
 def get_users():
     """Fetch all users from the CSV."""
-    users = load_users("users.csv")
-    return {"users": users}
+    try:
+        users = load_users("users.csv")
+        return {"users": users}
+    except Exception as e:
+        return {"error": f"Failed to load users: {str(e)}"}
 
 if __name__ == "__main__":
     import uvicorn
