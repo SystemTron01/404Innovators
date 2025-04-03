@@ -6,11 +6,11 @@ This project is an AI-powered **task allocation system** that assigns tasks to u
 
 ## 📌 Features
 
-- ✅ Load tasks and users from CSV files  
-- ✅ AI-powered task assignment using OpenAI/Gemini  
-- ✅ FastAPI backend with REST API endpoints  
-- ✅ React frontend with task display and allocation  
-- ✅ Simple CSV-based database (Excel-compatible)
+- ✅ **AI-Powered Task Assignment:** Utilizes OpenAI/Gemini to match tasks to the most suitable users based on skills and priorities.
+- ✅ **FastAPI Backend:** Handles task and user data efficiently through REST API endpoints.
+- ✅ **React Frontend:** Provides an intuitive interface to display tasks and user allocations.
+- ✅ **CSV-Based Storage:** Uses simple CSV files to store task and user information, making it lightweight and Excel-compatible.
+- ✅ **Scalability:** Designed to be easily extendable for databases and additional AI models.
 
 ---
 
@@ -20,32 +20,6 @@ This project is an AI-powered **task allocation system** that assigns tasks to u
 - **Frontend:** React, Chakra UI
 - **AI Integration:** OpenAI API / Gemini API
 - **Storage:** CSV (Excel-compatible)
-
----
-
-## ⚡ Quick Setup
-
-### 1️⃣ Clone the Repository
-```sh
-git clone https://github.com/YOUR_GITHUB_USERNAME/ai-task-allocation.git
-cd ai-task-allocation
-```
-
-### 2️⃣ Set Up Backend (FastAPI)
-```sh
-cd backend
-pip install -r requirements.txt
-uvicorn main:app --reload
-```
-📍 The backend runs at [http://127.0.0.1:8000](http://127.0.0.1:8000)
-
-### 3️⃣ Set Up Frontend (React)
-```sh
-cd frontend
-npm install
-npm start
-```
-📍 The frontend runs at [http://localhost:3000](http://localhost:3000)
 
 ---
 
@@ -115,65 +89,23 @@ ai-task-allocation/
 
 ---
 
-## 🛠️ How to Use the API
-
-### 1️⃣ Start the FastAPI Server
-```sh
-uvicorn main:app --reload
-```
-
-### 2️⃣ Available API Endpoints
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/` | GET | Check if API is running |
-| `/tasks` | GET | Fetch all tasks from the CSV |
-| `/users` | GET | Fetch all users from the CSV |
-| `/assign` | POST | Assign a task to the best user using AI |
-
-### 3️⃣ Testing API with Postman or Curl
-```sh
-# Get All Tasks
-curl -X GET "http://127.0.0.1:8000/tasks"
-
-# Get All Users
-curl -X GET "http://127.0.0.1:8000/users"
-
-# Assign Task Using AI
-curl -X POST "http://127.0.0.1:8000/assign" \
-     -H "Content-Type: application/json" \
-     -d '{"task_description": "Fix UI bug"}'
-```
-
----
-
-# 🎤 AI Task Allocation - Demo Script
+# 🎤 AI Task Allocation - Explanation
 
 ## 1️⃣ Introduction
-**"Hello everyone, welcome to our demo of the AI Task Allocation system! This project automates task assignments using AI, optimizing efficiency."**
+**"Our AI Task Allocation system automates task assignments by intelligently matching tasks with the most suitable users based on their skills and priorities."**
 
-## 2️⃣ Features Overview
-- **FastAPI Backend** for handling tasks and users.
-- **AI-based Task Assignment** using OpenAI/Gemini.
-- **React Frontend** to display tasks and users.
+## 2️⃣ Key Features Explained
+- **Task Management:** The system stores tasks in CSV format and categorizes them by priority.
+- **User Management:** User details, including their skills, are also stored in CSV files.
+- **AI-Powered Task Assignment:** The AI model processes task descriptions and assigns them to the most relevant user.
+- **Scalability & Flexibility:** The system is designed to integrate with databases or advanced AI models if needed.
 
-## 3️⃣ Live Demo
-
-### 📌 Step 1: Start the Server
-- Run: `uvicorn main:app --reload`
-- Open `http://127.0.0.1:8000` to check if it's running.
-
-### 📌 Step 2: Fetch Tasks & Users
-- Call `/tasks` to list all tasks.
-- Call `/users` to list available users.
-
-### 📌 Step 3: Assign a Task using AI
-- Send a **POST request** to `/assign`.
-- The AI suggests the best user for the task.
-
-### 📌 Step 4: Frontend Demo
-- Show task assignment in the React UI.
+## 3️⃣ AI Task Assignment Process
+- **Step 1:** The system reads available tasks and users from CSV files.
+- **Step 2:** When a task needs assignment, the AI model evaluates the task description.
+- **Step 3:** The AI suggests the best user for the task based on skill matching.
+- **Step 4:** The task is assigned, and the result is stored/displayed.
 
 ## 4️⃣ Conclusion
-**"This AI-powered system streamlines task management, making it more efficient. Thank you for watching!"**
-
+**"This AI-powered system streamlines task management, ensuring efficient and optimized task allocation. It is lightweight, scalable, and can be adapted for more advanced use cases."**
 
