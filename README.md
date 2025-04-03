@@ -1,30 +1,33 @@
 # 🚀 AI Task Allocation System
 
-This project is an AI-powered **task allocation system** that assigns tasks to users based on their skills and task priorities. The backend is built with **FastAPI**, the frontend with **React**, and AI-based task allocation uses **OpenAI/Gemini API**.  
+This project is an AI-powered **task allocation system** that assigns tasks to users based on their skills and task priorities. The backend is built with **FastAPI**, the frontend with **React**, and AI-based task allocation uses **OpenAI/Gemini API**.
 
 ---
 
 ## 📌 Features
+
 ✅ Load tasks and users from CSV files  
 ✅ AI-powered task assignment using OpenAI/Gemini  
 ✅ FastAPI backend with REST API endpoints  
 ✅ React frontend with task display and allocation  
-✅ Simple CSV-based database (Excel-compatible)  
+✅ Simple CSV-based database (Excel-compatible)
 
 ---
 
 ## 🛠️ Tech Stack
-- **Backend:** FastAPI (Python)  
-- **Frontend:** React, Chakra UI  
-- **AI Integration:** OpenAI API / Gemini API  
-- **Storage:** CSV (Excel-compatible)    
+
+- **Backend:** FastAPI (Python)
+- **Frontend:** React, Chakra UI
+- **AI Integration:** OpenAI API / Gemini API
+- **Storage:** CSV (Excel-compatible)
 
 ---
 
-## ⚡ Quick Setup  
+## ⚡ Quick Setup
 
-### 1️⃣ Clone the Repository  
-```sh
+### 1️⃣ Clone the Repository
+
+````sh
 git clone https://github.com/YOUR_GITHUB_USERNAME/ai-task-allocation.git
 cd ai-task-allocation
 2️⃣ Set Up Backend (FastAPI)
@@ -129,3 +132,51 @@ user_id,name,skills
  Enhance UI with task filtering
 
  Deploy the project (Optional)
+
+## 📌 API Endpoints
+
+### 1️⃣ Get All Tasks
+**Endpoint:** `GET /tasks`
+**Description:** Fetches all tasks from the CSV file.
+**Response Example:**
+```json
+[
+    {"task_id": 1, "task_description": "Fix UI bug", "priority": "High"},
+    {"task_id": 2, "task_description": "Optimize database", "priority": "Medium"}
+]
+2️⃣ Get All Users
+Endpoint: GET /users
+Description: Fetches all users from the CSV file.
+Response Example:
+
+json
+Copy
+Edit
+[
+    {"user_id": 101, "user_name": "John Doe", "skills": "UI, JavaScript"},
+    {"user_id": 102, "user_name": "Jane Doe", "skills": "Python, FastAPI"}
+]
+3️⃣ Assign Tasks Using AI
+Endpoint: POST /assign
+Description: Sends a task description and user list to AI for allocation.
+Request Example:
+
+json
+Copy
+Edit
+{
+    "task_description": "Optimize database queries",
+    "users": [
+        {"user_id": 101, "user_name": "John Doe", "skills": "UI, JavaScript"},
+        {"user_id": 102, "user_name": "Jane Doe", "skills": "Python, FastAPI"}
+    ]
+}
+Response Example:
+
+json
+Copy
+Edit
+{
+    "assigned_user": "Jane Doe"
+}
+````
