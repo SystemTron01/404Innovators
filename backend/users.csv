@@ -1,0 +1,6 @@
+user_id,user_name,skills
+101,"John Doe","UI, JavaScript"
+102,"Jane Doe","Python, FastAPI"
+103,"Mike Smith","Database, SQL"
+104,"Alice Johnson","Authentication, Security"
+105,"Bob Martin","Backend, API Development"
