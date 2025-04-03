@@ -33,6 +33,6 @@ async def assign_task(request: TaskRequest):
 def home():
     return {"message": "AI Task Allocation API is running!"}
 
-if _name_ == "_main_":
+if __name__ == "_main_":
     import uvicorn
     uvicorn.run(app, host="127.0.0.1", port=8000)
