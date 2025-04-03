@@ -1,0 +1,38 @@
+* [33m39c8cf9[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Added error handling and updated CORS in main.py
+*   [33m9442823[m Merge branch 'main' of https://github.com/SystemTron01/404Innovators
+[32m|[m[33m\[m  
+[32m|[m * [33m6b3b67a[m Added compiled Python file
+[32m|[m * [33m61159b4[m Updated main.py
+[32m|[m * [33m2f62987[m Added main.py to backend
+* [33m|[m [33m594fe3b[m Updated main.py and data_loader.py for improved API functionality
+* [33m|[m [33m7c05162[m Updated data_loader.py to improve CSV loading
+[33m|[m[33m/[m  
+* [33mc9e45be[m Added API documentation
+* [33mb991cfa[m Added sample CSV files
+* [33m1c01d40[m Added backend folder with FastAPI setup
+* [33mdbe40bb[m Added backend folder with FastAPI setup
+*   [33m6409a31[m Added sample CSV files for tasks and users
+[34m|[m[35m\[m  
+[34m|[m * [33mc0f6eec[m Create README.md
+[34m|[m * [33m5f4e87c[m Cleared main branch
+* [35m|[m   [33m62b9df4[m Merge pull request #2 from SystemTron01/new-feature
+[35m|[m[1;31m\[m [35m\[m  
+[35m|[m [1;31m|[m[35m/[m  
+[35m|[m[35m/[m[1;31m|[m   
+[35m|[m * [33m51c064c[m[33m ([m[1;31morigin/new-feature[m[33m, [m[1;32mnew-feature[m[33m)[m Moved files to new_folder
+[35m|[m * [33me1a9816[m Create myfile.txt
+[35m|[m * [33m471f37e[m Added my_folder with new files
+* [1;31m|[m [33me0eea26[m[33m ([m[1;31morigin/backup-branch[m[33m, [m[1;32mbackup-branch[m[33m)[m Moved files to new_folder
+* [1;31m|[m [33ma1e8260[m Added my_folder with new files
+* [1;31m|[m   [33m7a02741[m Merge pull request #1 from SystemTron01/SystemTron01-patch-1
+[1;31m|[m[1;33m\[m [1;31m\[m  
+[1;31m|[m [1;33m|[m[1;31m/[m  
+[1;31m|[m[1;31m/[m[1;33m|[m   
+[1;31m|[m * [33m368e558[m[33m ([m[1;31morigin/SystemTron01-patch-1[m[33m)[m Create myfile.txt
+[1;31m|[m[1;31m/[m  
+*   [33m2720f52[m Merge unrelated histories
+[1;34m|[m[1;35m\[m  
+[1;34m|[m * [33m0daa9a5[m sigma updates
+[1;34m|[m * [33m6808777[m Added backend folder
+[1;34m|[m * [33m94cf86b[m Ready for deployment
+* [33m8ef644c[m Initial commit
